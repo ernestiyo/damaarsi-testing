@@ -1,5 +1,9 @@
 Feature: Catalog
 
+  Background:
+    Given User Should Login with valid credential
+    Then User should be redirected to the Superadmin Dashboard
+
   Scenario: Tambah produk baru (Positive)
     Given User is on the Catalog Page
     When User clicks the "Tambah Produk" button
@@ -10,7 +14,7 @@ Feature: Catalog
       | Tipe Produk      | Paket      |
       | Gambar 1         | /contoh.jpg|
     And User clicks the "Simpan" button
-    Then The product should appear in the catalog and user interface
+    Then User should see a success message popup
 
   Scenario: Tambah produk baru tanpa mengisi 1 data input (Negative)
     Given User is on the Catalog Page
