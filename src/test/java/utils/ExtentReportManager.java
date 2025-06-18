@@ -29,7 +29,7 @@ public class ExtentReportManager {
 
         extent.setSystemInfo("OS", System.getProperty("os.name"));
         extent.setSystemInfo("Browser", "Chrome");
-        extent.setSystemInfo("QA", "Wahhab & Luthfi");
+        extent.setSystemInfo("Kelompok", "PAD 17");
         extent.setSystemInfo("Environment", "Staging");
     }
 
