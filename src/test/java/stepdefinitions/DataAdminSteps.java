@@ -9,8 +9,6 @@ import org.junit.Assert;
 import pages.DataAdminPage;
 import utils.TestContext;
 
-import java.time.Duration; // For Thread.sleep alternative or custom waits
-
 public class DataAdminSteps {
 
     private WebDriver driver;
@@ -18,7 +16,6 @@ public class DataAdminSteps {
     private final TestContext testContext;
     private static final String DATA_ADMIN_PAGE_URL = "https://damaarsi.madanateknologi.web.id/admin/dataadmin";
 
-    // This will hold the username of the admin selected for the current scenario
     private String selectedAdminUsername;
 
     public DataAdminSteps(TestContext context) {
@@ -29,8 +26,6 @@ public class DataAdminSteps {
 
     @Given("User is on the Data Admin Page")
     public void userIsOnDataAdminPage() {
-        // The Background ensures the user is logged in and on the Superadmin Dashboard.
-        // This step then navigates directly to the Data Admin page.
         driver.get(DATA_ADMIN_PAGE_URL);
         dataAdminPage.waitForDataAdminPageLoad();
     }
@@ -47,13 +42,9 @@ public class DataAdminSteps {
 
     @And("User clicks the {string} button for the selected admin")
     public void userClicksTheButtonForSelectedAdmin(String buttonText) {
-        // This method will click the toggle button for the selected admin
         dataAdminPage.clickToggleButtonForAdmin(selectedAdminUsername);
-
-        // Add a small wait here as the UI updates via AJAX.
-        // This wait is crucial for the UI to reflect the new state from the API response.
         try {
-            Thread.sleep(2000); // Increased to 2 seconds for more stability
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

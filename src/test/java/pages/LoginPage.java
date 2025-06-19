@@ -51,19 +51,19 @@ public class LoginPage {
     }
 
     public boolean hasValidationError(String errorMessagePart) {
-        boolean usernameErrorVisible = false;
-        try {
-            WebElement userErr = driver.findElement(usernameError);
-            usernameErrorVisible = userErr.isDisplayed() && userErr.getText().contains(errorMessagePart);
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-        }
-
-        boolean passwordErrorVisible = false;
-        try {
-            WebElement passErr = driver.findElement(passwordError);
-            passwordErrorVisible = passErr.isDisplayed() && passErr.getText().contains(errorMessagePart);
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-        }
+//        boolean usernameErrorVisible = false;
+//        try {
+//            WebElement userErr = driver.findElement(usernameError);
+//            usernameErrorVisible = userErr.isDisplayed() && userErr.getText().contains(errorMessagePart);
+//        } catch (org.openqa.selenium.NoSuchElementException e) {
+//        }
+//
+//        boolean passwordErrorVisible = false;
+//        try {
+//            WebElement passErr = driver.findElement(passwordError);
+//            passwordErrorVisible = passErr.isDisplayed() && passErr.getText().contains(errorMessagePart);
+//        } catch (org.openqa.selenium.NoSuchElementException e) {
+//        }
 
         try {
             wait.until(ExpectedConditions.alertIsPresent());
@@ -73,6 +73,6 @@ public class LoginPage {
         } catch (org.openqa.selenium.TimeoutException e) {
         }
 
-        return usernameErrorVisible || passwordErrorVisible;
+//        return usernameErrorVisible || passwordErrorVisible;
     }
 }

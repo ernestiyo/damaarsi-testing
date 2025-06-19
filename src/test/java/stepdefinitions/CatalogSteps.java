@@ -37,7 +37,7 @@ public class CatalogSteps {
     public void clickTambahProdukButton(String buttonText) {
         if ("Tambah Produk".equals(buttonText)) {
             catalogPage.clickAddProductButton();
-        } else if ("Simpan".equals(buttonText) || "Tambah".equals(buttonText)) { // "Tambah" is the button in the modal
+        } else if ("Tambah".equals(buttonText)) {
             catalogPage.clickSaveButton();
         }
     }
